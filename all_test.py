@@ -1,6 +1,7 @@
 from hello_world import randy
 from hello_world import app
 
+
 # unit
 def test_random():
     """
@@ -8,10 +9,10 @@ def test_random():
     WHEN a random number is needed between these
     THEN check that the random number lies in the expected range
     """
-    for _ in range(0,10):
-        a = randy(0,10)
+    for _ in range(0, 10):
+        a = randy(0, 10)
         assert a <= 10 and a >= 0
-    
+
 
 # functional
 def test_root():
@@ -33,8 +34,8 @@ def test_cc():
     THEN check that the returned number is correct
     """
     import random
-    for _ in range(0,10):
-        nbr = random.randint(1,100)
+    for _ in range(0, 10):
+        nbr = random.randint(1, 100)
         txt = "a"*nbr
         with app.test_client() as test_client:
             response = test_client.get('/cc/'+txt)
